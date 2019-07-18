@@ -1,4 +1,4 @@
-# Playable Streets Framework
+# Playable Streets Toolkit
 ### A cross-platform framework for expressive, touch-based interaction design.
 
 Included in this framework are:
