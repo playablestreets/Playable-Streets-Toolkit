@@ -1,5 +1,5 @@
 # Playable Streets Framework
-###A cross-platform framework for expressive touch-based interaction design.
+### A cross-platform framework for expressive touch-based interaction design.
 
 Included in this framework are:
 
@@ -9,7 +9,7 @@ Included in this framework are:
 	- formating and forwarding sense data
 - a set of Max for Live devices for interfacing Ableton Live with the framework
 
-##Requirements
+## Requirements
 - Purr Data: https://agraef.github.io/purr-data/
 - Arduino: https://www.arduino.cc/en/main/software
 
