@@ -1,0 +1,20 @@
+#N canvas 136 115 753 343 10;
+#X obj 208 66 inlet;
+#X obj 85 287 sendOSC;
+#X msg 102 252 connect 255.255.255.255 9000;
+#X obj 85 106 prepend send /ps/\$1;
+#X obj 102 225 loadbang;
+#X obj 289 216 gate;
+#X obj 289 187 tgl 15 0 empty empty print 17 5 0 10 -262144 -1 -1 0
+1;
+#X obj 125 146 route send;
+#X obj 289 244 print;
+#X connect 0 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 3 0 7 0;
+#X connect 4 0 2 0;
+#X connect 5 0 8 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 1;
+#X coords 0 -1 1 1 178 40 1 285 167;
