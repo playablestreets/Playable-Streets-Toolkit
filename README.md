@@ -1,5 +1,5 @@
 # Playable Streets Framework
-### A cross-platform framework for expressive touch-based interaction design.
+### A cross-platform framework for expressive, touch-based interaction design.
 
 Included in this framework are:
 
