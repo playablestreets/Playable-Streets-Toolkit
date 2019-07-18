@@ -4,8 +4,8 @@
 Included in this framework are:
 
 - a set sketches for ESP32 and other Arduino type boards for capacitive and resistive touch sensing.
-- a set of pure data abstractions for
-	- communicating with sensors over wifi and usb-serial
+- a set of Pure Data abstractions for
+	- communicating with sensors via OSC over wifi and usb-serial
 	- formating and forwarding sense data
 - a set of Max for Live devices for interfacing Ableton Live with the framework
 
