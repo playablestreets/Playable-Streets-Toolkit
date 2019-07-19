@@ -3,7 +3,7 @@
 #X obj 27 153 pst-touch-scaler;
 #X obj 256 115 pst-touch-scaler;
 #X obj 27 263 pst-scale-maker;
-#X obj 27 393 pst-osc-out lettuce;
+#X obj 25 402 pst-osc-out lettuce;
 #X obj 257 238 pst-osc-out mandy;
 #X obj 331 117 < pst-touch-scaler normalizes and smooths touch data
 \, outputing a variable value between 0 and 1 from its left outlet
