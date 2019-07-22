@@ -43,6 +43,8 @@
 #X text 400 127 9;
 #X text 444 127 10;
 #X text 491 127 11;
+#X obj 134 -25 s pst-osc-in;
+#X obj 134 -3 r pst-osc-in;
 #X connect 1 0 0 0;
 #X connect 2 0 9 0;
 #X connect 3 0 10 0;
@@ -59,7 +61,7 @@
 #X connect 24 5 6 0;
 #X connect 24 6 7 0;
 #X connect 24 7 8 0;
-#X connect 25 0 28 0;
+#X connect 25 0 44 0;
 #X connect 26 0 25 0;
 #X connect 27 0 26 0;
 #X connect 28 0 29 0;
@@ -70,4 +72,5 @@
 #X connect 33 0 37 0;
 #X connect 34 0 38 0;
 #X connect 35 0 39 0;
+#X connect 45 0 28 0;
 #X coords 0 -1 1 1 540 46 1 0 110;
