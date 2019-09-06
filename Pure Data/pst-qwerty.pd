@@ -1,0 +1,10 @@
+#N canvas 652 62 616 963 12;
+#X obj 242 154 outlet;
+#X obj 242 46 keyname;
+#X obj 242 82 zl join;
+#X obj 242 118 zl rev;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X coords 0 0 1 1 75 26 0;
