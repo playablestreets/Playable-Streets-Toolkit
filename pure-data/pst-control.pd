@@ -1,31 +1,25 @@
-#N canvas 793 124 450 347 10;
+#N canvas 263 159 450 347 10;
 #X obj 14 15 inlet;
-#X obj 15 279 outlet;
+#X obj 15 239 outlet;
 #X obj 14 77 s \$0-tocontrolslider;
 #X obj 15 141 r \$0-fromcontrolslider;
 #X obj 14 45 * 127;
-#X obj 147 194 ctlout;
-#X floatatom 294 76 5 1 127 1 control-ID #0-tocontrolid #0-fromcontrolid
+#X obj 62 239 ctlout;
+#X floatatom 294 76 5 0 127 1 control-ID #0-tocontrolid #0-fromcontrolid
 , f 5;
 #X obj 163 152 r \$0-fromcontrolid;
 #X obj 164 129 s \$0-tocontrolid;
 #X obj 294 99 hsl 93 15 0 127 0 0 \$0-fromcontrolslider \$0-tocontrolslider
-empty -2 -8 0 10 -262144 -1 -1 0 1;
+empty -2 -8 0 10 -262144 -1 -1 4850 1;
 #X obj 164 95 loadbang;
 #X obj 15 197 pack;
-#X obj 15 228 swap;
-#X obj 15 253 pack;
 #X obj 15 170 int;
 #X connect 0 0 4 0;
-#X connect 3 0 5 0;
-#X connect 3 0 14 0;
+#X connect 3 0 12 0;
 #X connect 4 0 2 0;
-#X connect 7 0 5 1;
 #X connect 7 0 11 1;
 #X connect 10 0 8 0;
-#X connect 11 0 12 0;
-#X connect 12 0 13 0;
-#X connect 12 1 13 1;
-#X connect 13 0 1 0;
-#X connect 14 0 11 0;
+#X connect 11 0 1 0;
+#X connect 11 0 5 0;
+#X connect 12 0 11 0;
 #X coords 0 -1 1 1 115 72 1 286 53;
