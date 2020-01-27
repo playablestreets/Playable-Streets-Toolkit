@@ -11,14 +11,14 @@ it to a musical scale \, outputing midi note pairs of pitch and velocity
 #X obj 235 466 < pst-osc-out forwards data from its inlet to the local
 network as OSC on port 9000 using its argument as the OSC address,
 f 35;
-#X text 217 96 ^ pst-etm-usb and pst-etm bring in touch data from the
-ESP32. Its argument is the MAC address of the target ESP32.;
+#X text 209 180 ^ pst-etm-usb and pst-etm bring in touch data from
+the ESP32. Its argument is the MAC address of the target ESP32.;
 #X obj 746 194 pst-qwerty;
 #X obj 746 232 pst-osc-out qwerty;
 #X obj 814 196 < outputs key/value pairs, f 35;
 #X obj 27 528 noteout;
-#X obj 580 34 pst-etm B4-E6-2D-EA-1C-F5;
-#X obj 27 33 pst-etm-usb B4-E6-2D-EA-1C-F5;
+#X obj 27 74 pst-etm-usb B4-E6-2D-EA-1C-F5;
+#X obj 27 129 pst-etm B4-E6-2D-EA-1C-F5;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 0 10 0;
