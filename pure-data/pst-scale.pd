@@ -1,18 +1,18 @@
 #N canvas 231 0 872 668 10;
 #X obj 46 62 inlet;
-#X dropdown 98 106 17 1 0 0 - #0-toscaledropdown #0-fromscaledropdown
+#X dropdown 82 124 17 1 0 0 - #0-toscaledropdown #0-fromscaledropdown
 , f 17;
-#X obj 449 165 s \$0-toscaledropdown;
-#X obj 449 195 r \$0-fromscaledropdown;
+#X obj 449 178 s \$0-toscaledropdown;
+#X obj 449 208 r \$0-fromscaledropdown;
 #X obj 449 98 loadbang;
-#X obj 80 106 vsl 17 75 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 41 102 vsl 17 75 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X floatatom 79 435 5 0 0 0 - - -, f 5;
 #X obj 79 520 change;
 #X obj 79 463 int;
 #X floatatom 79 491 5 0 0 0 - - -, f 5;
 #X floatatom 105 334 5 0 0 0 - - -, f 5;
-#X floatatom 98 127 5 0 1 1 low-threshold #0-tolowthreshold #0-fromlowthreshold
+#X floatatom 82 145 5 0 1 1 low-threshold #0-tolowthreshold #0-fromlowthreshold
 , f 5;
 #X obj 105 303 r \$0-fromlowthreshold;
 #X obj 105 283 s \$0-tolowthreshold;
@@ -23,7 +23,7 @@
 #X obj 319 449 > 0;
 #X obj 318 482 * 127;
 #X text 359 482 < current velocity;
-#X msg -68 596 0 2 4 7 9;
+#X msg -68 596 0 2 4 7 9 12 14 16 19 21;
 #X obj 72 639 zl nth;
 #X obj 79 555 t b f;
 #X obj 222 803 pack, f 5;
@@ -44,26 +44,26 @@
 #X obj 410 601 s \$0-noteoff;
 #X text 110 667 < scale offset;
 #X obj 466 767 outlet;
-#X text 100 175 outputs note pairs;
+#X text 270 169 outputs note pairs;
 #X obj 141 872 s \$0-notepairout;
 #X obj 250 1015 s \$0-notepairout;
 #X obj 466 726 r \$0-notepairout;
 #X obj 440 246 r \$0-notepairout;
-#X floatatom 172 196 5 0 0 0 - #0-velocityout -, f 5;
+#X floatatom 174 226 5 0 0 0 - #0-velocityout -, f 5;
 #X obj 437 366 s \$0-noteout;
 #X obj 471 341 s \$0-velocityout;
-#X floatatom 103 196 5 0 0 0 - #0-noteout -, f 5;
+#X floatatom 105 226 5 0 0 0 - #0-noteout -, f 5;
 #X obj 438 309 unpack;
 #X obj 270 885 r \$0-noteoff;
 #X floatatom -68 399 5 0 0 0 - #0-numoctaves -, f 5;
-#X floatatom 98 146 5 1 99 1 number-of-octaves #0-to-numoctaves #0-numoctaves
+#X floatatom 82 164 5 1 99 1 number-of-octaves #0-to-numoctaves #0-from-numoctaves
 , f 5;
 #X text 248 89 todo: add multiple scales add gui for offset add velocity
 control, f 30;
 #N canvas 177 195 782 662 scalemaker 0;
 #X obj 296 28 inlet;
 #X obj 223 695 outlet;
-#X msg 335 318 0 2 4 7 9;
+#X msg 335 318 0 3 5 6 7 10;
 #X obj 366 203 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 593 546 set;
@@ -80,9 +80,9 @@ control, f 30;
 #X obj 365 154 uzi;
 #X obj 365 119 t b i;
 #X text 109 319 scale as semi-tone steps >;
-#X msg 282 658 0 2 4 7 9;
+#X msg 282 658;
 #X obj 296 86 t b i b, f 52;
-#N canvas 889 139 450 323 scales 0;
+#N canvas 393 159 450 346 scales 0;
 #X obj 65 -5 r \$0-fromscaledropdown;
 #X obj 65 27 t b s, f 8;
 #X obj 65 119 outlet;
@@ -183,12 +183,17 @@ locrain, f 61;
 #X obj -41 513 s \$0-numnotes;
 #X obj 168 329 r \$0-numnotes;
 #X text -238 596 scale as semi-tone steps >;
-#X obj -73 284 loadbang;
-#X obj -73 311 s \$0-to-numoctaves;
+#X obj -139 203 loadbang;
+#X obj -103 321 s \$0-to-numoctaves;
 #X obj 78 395 maxlib/scale 0.2 1 0 5;
 #X msg 590 121 names major-pentatonic minor-pentatonic blues ionian
 dorian phygian lydian mixolydian aeolian locrian lydian-dominant diminished
 whole-tone altered;
+#X msg -104 295 3;
+#X obj -104 259 prepend set;
+#X obj -104 233 r \$0-from-numoctaves;
+#X obj 511 766 noteout;
+#X obj -177 369 r \$0-from-numoctaves;
 #X connect 0 0 5 0;
 #X connect 4 0 66 0;
 #X connect 5 0 65 0;
@@ -224,6 +229,7 @@ whole-tone altered;
 #X connect 35 0 34 0;
 #X connect 37 0 30 0;
 #X connect 44 0 40 0;
+#X connect 44 0 70 0;
 #X connect 45 0 50 0;
 #X connect 50 0 47 0;
 #X connect 50 1 48 0;
@@ -235,8 +241,12 @@ whole-tone altered;
 #X connect 57 1 58 0;
 #X connect 58 0 60 0;
 #X connect 61 0 17 0;
-#X connect 63 0 64 0;
+#X connect 63 0 67 0;
 #X connect 65 0 6 0;
 #X connect 65 0 18 0;
 #X connect 66 0 2 0;
-#X coords 0 -1 1 1 163 116 2 77 102;
+#X connect 67 0 64 0;
+#X connect 68 0 67 0;
+#X connect 69 0 68 0;
+#X connect 71 0 55 0;
+#X coords 0 -1 1 1 152 86 1 77 102;
