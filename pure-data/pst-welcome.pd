@@ -1,27 +1,26 @@
-#N canvas 32 62 916 963 10;
-#X obj 27 33 pst-etm-usb B4-E6-2D-EA-1C-F5;
+#N canvas -7 0 665 675 10;
 #X obj 27 213 pst-touch-scaler;
-#X obj 256 175 pst-touch-scaler;
 #X obj 27 323 pst-scale-maker;
-#X obj 25 462 pst-osc-out lettuce;
-#X obj 257 298 pst-osc-out mandy;
-#X obj 329 167 < pst-touch-scaler normalizes and smooths touch data
+#X obj 54 466 pst-osc-out lettuce;
+#X obj 98 214 < pst-touch-scaler normalizes and smooths touch data
 \, outputing a variable value between 0 and 1 from its left outlet
 and a trigger value of 0 or 1 from its right outlet, f 35;
-#X obj 213 344 < pst-scale-maker takes variable touch data and maps
+#X obj 192 324 < pst-scale-maker takes variable touch data and maps
 it to a musical scale \, outputing midi note pairs of pitch and velocity
 , f 35;
-#X obj 213 456 < pst-osc-out forwards data from its inlet to the local
+#X obj 235 466 < pst-osc-out forwards data from its inlet to the local
 network as OSC on port 9000 using its argument as the OSC address,
 f 35;
 #X text 217 96 ^ pst-etm-usb and pst-etm bring in touch data from the
 ESP32. Its argument is the MAC address of the target ESP32.;
-#X obj 588 166 pst-qwerty;
-#X obj 588 204 pst-osc-out qwerty;
-#X obj 656 168 < outputs key/value pairs, f 35;
+#X obj 746 194 pst-qwerty;
+#X obj 746 232 pst-osc-out qwerty;
+#X obj 814 196 < outputs key/value pairs, f 35;
+#X obj 27 528 noteout;
+#X obj 580 34 pst-etm B4-E6-2D-EA-1C-F5;
+#X obj 27 33 pst-etm-usb B4-E6-2D-EA-1C-F5;
 #X connect 0 0 1 0;
-#X connect 0 1 2 0;
-#X connect 1 0 3 0;
-#X connect 2 0 5 0;
-#X connect 3 0 4 0;
-#X connect 10 0 11 0;
+#X connect 1 0 2 0;
+#X connect 1 0 10 0;
+#X connect 7 0 8 0;
+#X connect 12 0 0 0;
