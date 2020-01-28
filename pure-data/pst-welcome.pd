@@ -1,24 +1,26 @@
-#N canvas 0 0 1334 668 10;
-#X obj 27 213 pst-touch-scaler;
-#X obj 97 221 < pst-touch-scaler normalizes and smooths touch data
-\, outputing a variable value between 0 and 1 from its left outlet
-and a trigger value of 0 or 1 from its right outlet, f 35;
-#X obj 645 359 < pst-osc-out forwards data from its inlet to the local
+#N canvas -7 0 1005 675 10;
+#X obj 579 368 pst-qwerty;
+#X obj 213 317 pst-control;
+#X obj 179 457 pst-scale;
+#X obj 579 406 pst-osc qwerty;
+#X obj 177 143 pst-touch EC-FA-BC-61-0F-0E;
+#X text 350 143 < pst-reads touch data over wifi. It's argument is
+the MAC address of the target touch sensor.   It outputs a variable
+value between 0 and 1 from its left outlet and a trigger value of 0
+or 1 from its right outlet.   The left inlet sets the threshold. A
+bang in the right inlet triggers reset., f 36;
+#X text 335 316 < pst-control takes variable touch data and sends it
+out as midi control change data, f 31;
+#X text 337 471 < pst-scale takes variable touch data and maps it to
+a musical scale \, outputing midi note pairs, f 27;
+#X text 648 370 < outputs key/value pairs;
+#X text 706 405 < pst-osc-out forwards data from its inlet to the local
 network as OSC on port 9000 using its argument as the OSC address,
-f 35;
-#X text 209 180 ^ pst-etm-usb and pst-etm bring in touch data from
-the ESP32. Its argument is the MAC address of the target ESP32.;
-#X obj 522 318 pst-qwerty;
-#X obj 590 320 < outputs key/value pairs, f 26;
-#X obj 27 129 pst-etm B4-E6-2D-EA-1C-F5;
-#X obj 121 314 pst-control;
-#X obj 239 315 < pst-control takes variable touch data and sends it
-out as midi control change data, f 35;
-#X obj 27 393 pst-scale;
-#X obj 522 356 pst-osc qwerty;
-#X obj 182 406 < pst-scale takes variable touch data and maps it to
-a musical scale \, outputing midi note pairs, f 35;
-#X connect 0 0 7 0;
-#X connect 0 0 9 0;
-#X connect 4 0 10 0;
-#X connect 6 0 0 0;
+f 31;
+#X obj 179 578 pst-osc notez;
+#X obj 29 389 pst-osc signal;
+#X connect 0 0 3 0;
+#X connect 2 0 10 0;
+#X connect 4 0 1 0;
+#X connect 4 0 2 0;
+#X connect 4 0 11 0;

@@ -6,7 +6,7 @@
 #X obj 449 208 r \$0-fromscaledropdown;
 #X obj 449 98 loadbang;
 #X obj 41 102 vsl 17 75 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 3288 1;
 #X floatatom 79 435 5 0 0 0 - - -, f 5;
 #X obj 79 520 change;
 #X obj 79 463 int;
@@ -23,7 +23,7 @@
 #X obj 319 449 > 0;
 #X obj 318 482 * 127;
 #X text 359 482 < current velocity;
-#X msg -68 596 0 2 4 7 9 12 14 16 19 21;
+#X msg -68 596 0 3 5 6 7 10 12 15 17 18 19 22;
 #X obj 72 639 zl nth;
 #X obj 79 555 t b f;
 #X obj 222 803 pack, f 5;
@@ -80,7 +80,7 @@ control, f 30;
 #X obj 365 154 uzi;
 #X obj 365 119 t b i;
 #X text 109 319 scale as semi-tone steps >;
-#X msg 282 658;
+#X msg 282 658 0 3 5 6 7 10 12 15 17 18 19 22;
 #X obj 296 86 t b i b, f 52;
 #N canvas 393 159 450 346 scales 0;
 #X obj 65 -5 r \$0-fromscaledropdown;
@@ -189,10 +189,9 @@ locrain, f 61;
 #X msg 590 121 names major-pentatonic minor-pentatonic blues ionian
 dorian phygian lydian mixolydian aeolian locrian lydian-dominant diminished
 whole-tone altered;
-#X msg -104 295 3;
+#X msg -104 295 2;
 #X obj -104 259 prepend set;
 #X obj -104 233 r \$0-from-numoctaves;
-#X obj 511 766 noteout;
 #X obj -177 369 r \$0-from-numoctaves;
 #X connect 0 0 5 0;
 #X connect 4 0 66 0;
@@ -229,7 +228,6 @@ whole-tone altered;
 #X connect 35 0 34 0;
 #X connect 37 0 30 0;
 #X connect 44 0 40 0;
-#X connect 44 0 70 0;
 #X connect 45 0 50 0;
 #X connect 50 0 47 0;
 #X connect 50 1 48 0;
@@ -248,5 +246,5 @@ whole-tone altered;
 #X connect 67 0 64 0;
 #X connect 68 0 67 0;
 #X connect 69 0 68 0;
-#X connect 71 0 55 0;
+#X connect 70 0 55 0;
 #X coords 0 -1 1 1 152 86 1 77 102;
