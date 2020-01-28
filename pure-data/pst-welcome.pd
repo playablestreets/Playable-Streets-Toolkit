@@ -3,8 +3,7 @@
 #X obj 213 317 pst-control;
 #X obj 179 457 pst-scale flt 0.0735294 flt 0 flt 1;
 #X obj 579 406 pst-osc qwerty;
-#X obj 177 143 pst-touch EC-FA-BC-61-0F-0E;
-#X text 350 143 < pst-reads touch data over wifi. It's argument is
+#X text 536 102 < pst-reads touch data over wifi. It's argument is
 the MAC address of the target touch sensor.   It outputs a variable
 value between 0 and 1 from its left outlet and a trigger value of 0
 or 1 from its right outlet.   The left inlet sets the threshold. A
@@ -19,8 +18,10 @@ network as OSC on port 9000 using its argument as the OSC address,
 f 31;
 #X obj 29 389 pst-osc signal;
 #X obj 179 578 pst-osc bobnotes;
+#X obj 177 143 pst-touch flt 0.34127 flt 0.464567 sym EC-FA-BC-61-0F-0E
+;
 #X connect 0 0 3 0;
-#X connect 2 0 11 0;
-#X connect 4 0 1 0;
-#X connect 4 0 2 0;
-#X connect 4 0 10 0;
+#X connect 2 0 10 0;
+#X connect 11 0 1 0;
+#X connect 11 0 2 0;
+#X connect 11 0 9 0;
