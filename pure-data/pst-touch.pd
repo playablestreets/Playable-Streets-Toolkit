@@ -1,18 +1,18 @@
 #N canvas 334 0 665 668 10;
-#X obj 33 307 cnv 15 164 121 empty empty PST-TOUCH 5 5 0 14 -4033 -262144
+#X obj 33 308 cnv 15 142 117 empty empty PST-TOUCH 5 5 0 14 -4033 -262144
 0;
 #X obj 266 789 outlet;
 #X obj 348 283 prepend set;
 #X obj 308 95 inlet;
 #X obj 383 95 inlet;
-#X floatatom 39 404 19 0 0 0 - #0-scaled-value -, f 19;
+#X floatatom 39 405 19 0 0 0 - #0-scaled-value -, f 19;
 #X obj 269 726 s \$0-scaled-value;
 #X obj 231 191 s \$0-inlet1;
 #X obj 230 229 r \$0-inlet1;
 #X obj 487 231 r \$0-scaled-value;
 #X obj 266 757 r \$0-scaled-value;
 #X obj 382 788 outlet;
-#X obj 157 405 tgl 15 0 empty \$0-trigger-out empty 17 7 0 10 -262144
+#X obj 157 406 tgl 15 0 empty \$0-trigger-out empty 17 7 0 10 -262144
 -1 -1 0 1;
 #X obj 487 260 hysteresis 0.05;
 #X obj 487 349 > 0.5;
@@ -49,8 +49,8 @@
 #X floatatom 396 443 5 0 0 0 - - -, f 5;
 #X obj 365 410 t f b;
 #X obj 365 442 max;
-#X obj 173 312 bng 15 250 50 0 \$0-reset \$0-to-reset reset -33 5 0
-10 -262144 -1 -1;
+#X obj 156 313 bng 15 250 50 0 \$0-reset \$0-to-reset rst -20 5 0 10
+-262144 -1 -1;
 #X obj 403 309 r \$0-reset;
 #X obj 396 465 change;
 #X obj 306 464 change;
@@ -76,13 +76,13 @@
 #X obj 641 604 loadbang;
 #X obj 641 630 delay 500;
 #X obj 573 156 print;
-#X obj 39 355 hsl 127 19 0 1 0 0 empty \$0-scaled-value empty -2 -8
+#X obj 39 356 hsl 127 19 0 1 0 0 empty \$0-scaled-value empty -2 -8
 0 10 -1 -262144 -1 0 1;
-#X obj 39 360 hsl 127 14 0 1 0 1 \$0threshs \$0threshr threshold 3
-5 0 9 -262144 -4033 -133153 5850 1;
+#X obj 39 361 hsl 127 14 0 1 0 1 \$0threshs \$0threshr threshold 3
+5 0 9 -262144 -4033 -133153 4300 1;
 #X obj 308 211 s $threshr;
 #X obj 514 291 r \$0threshs;
-#N canvas 202 177 645 462 numbercruncher 1;
+#N canvas 202 177 645 462 numbercruncher 0;
 #X obj 87 10 inlet;
 #X obj 325 249 loadbang;
 #X obj 134 415 outlet;
@@ -139,11 +139,11 @@ saver;
 #X text 959 325 This spigot is necessary because if one [canvasargs]
 object feeds the creation argument straight into another it will cause
 PD to crash.;
-#X obj 39 378 hsl 128 14 0 1 0 1 \$0curves \$0curver curve 3 5 0 9
--262144 -4033 -133153 3793 1;
+#X obj 39 379 hsl 128 14 0 1 0 1 \$0curves \$0curver curve 3 5 0 9
+-262144 -4033 -133153 5900 1;
 #X obj 641 661 s \$0curver;
 #X obj 320 576 r \$0curves;
-#X symbolatom 54 334 19 0 0 0 ID #0macr #0macs, f 19;
+#X symbolatom 54 335 19 0 0 0 ID #0macr #0macs, f 19;
 #X obj 258 -29 r \$0macs;
 #X obj 231 -4 route;
 #X connect 2 0 33 0;
@@ -208,4 +208,4 @@ PD to crash.;
 #X connect 69 0 19 1;
 #X connect 71 0 72 1;
 #X connect 72 0 42 0;
-#X coords 0 -1 1 1 171 127 2 30 304;
+#X coords 0 -1 1 1 148 125 2 30 304;

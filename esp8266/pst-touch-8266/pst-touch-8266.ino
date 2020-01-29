@@ -1,3 +1,8 @@
+//Libraries required:
+//Autoconnect
+//OSC
+//Filters https://github.com/JonHub/Filters
+
 // 4 for esp pin 2 
 //using 13 for esp pin 7
 #include <AutoConnect.h>
@@ -23,6 +28,7 @@
 
 #include <Wire.h>
 
+
 ESP8266WebServer Server;          // Replace with WebServer for ESP32
 AutoConnect      Portal(Server);
 
@@ -40,6 +46,7 @@ const unsigned int outPort = 8000;          // remote port to receive OSC
 const unsigned int localPort = 9000;        // local port to listen for OSC packets 
 String macString = "";
 String oscAddress;
+
 ////////////////////////////////setup_touch/////////////////////////////////////
 #define resolution 8
 #define mains 50 // 60: north america, japan; 50: most other places
@@ -49,9 +56,11 @@ unsigned long oldMicros = 0;
 unsigned long period = 4200000 ; //70mins
 int out1;
 int previousData1 = 0;
+
 /////////////////////////////////////Filter////////////////////////////////////////////
 int Frequency = 30 ; //for power line interferance
 FilterOnePole filterOneLowpass( LOWPASS, Frequency );
+
 ////////////////////////////////////////////////////////////////////////////////
 void rootPage() {
   char content[] = "Hello, world";
@@ -127,4 +136,3 @@ long time(int pin) {
   oldMicros = micros(); 
   return (count << resolution) / total;
 }
-
