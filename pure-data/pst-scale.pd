@@ -15,7 +15,7 @@
 #X obj 319 449 > 0;
 #X obj 318 482 * 127;
 #X text 359 482 < current velocity;
-#X msg -68 596 0 1 3 4 6 8 10 12 13 15 16 18 20 22;
+#X msg -68 596 0 2 4 7 9;
 #X obj 72 639 zl nth;
 #X obj 79 555 t b f;
 #X obj 222 803 pack, f 5;
@@ -49,7 +49,7 @@
 #N canvas 59 188 782 444 scalemaker 0;
 #X obj 296 28 inlet;
 #X obj 223 695 outlet;
-#X msg 335 318 0 1 3 4 6 8 10;
+#X msg 335 318 0 2 4 7 9;
 #X obj 366 203 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 593 546 set;
@@ -66,7 +66,7 @@
 #X obj 365 154 uzi;
 #X obj 365 119 t b i;
 #X text 109 319 scale as semi-tone steps >;
-#X msg 282 658 0 1 3 4 6 8 10 12 13 15 16 18 20 22;
+#X msg 282 658 0 2 4 7 9;
 #X obj 296 86 t b i b, f 52;
 #N canvas 764 21 511 714 scales 0;
 #X obj 65 27 t b s, f 8;
@@ -232,10 +232,10 @@ object feeds the creation argument straight into another it will cause
 PD to crash.;
 #X obj 105 283 s \$0threshr;
 #X obj 105 303 r \$0threshs;
-#X obj 82 121 hsl 137 19 0 1 0 0 empty \$0inlet1 empty -2 -8 0 10 -1
--262144 -1 110 1;
-#X obj 82 126 hsl 137 14 0 1 0 1 \$0threshs \$0threshr threshold 3
-5 0 9 -262144 -4033 -133153 1000 1;
+#X obj 82 121 hsl 137 8 0 1 0 0 empty \$0inlet1 empty -2 -8 0 10 -1
+-262144 -1 0 1;
+#X obj 76 208 hsl 137 14 0 1 0 1 \$0threshs \$0threshr threshold 3
+5 0 9 -262144 -4033 -133153 0 1;
 #X obj -14 75 s \$0inlet1;
 #X obj 35 359 r \$0inlet1;
 #X obj 514 135 route names;
