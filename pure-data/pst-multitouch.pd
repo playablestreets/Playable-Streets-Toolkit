@@ -12,14 +12,14 @@
 #X obj 702 -100 netreceive -u -b;
 #X msg 702 -127 listen 8000;
 #X obj 702 -154 loadbang;
-#X obj 63 15 oscparse;
-#X obj 63 42 route list;
-#X obj 63 126 route touches;
+#X obj 231 182 oscparse;
+#X obj 231 209 route list;
+#X obj 231 293 route touches;
 #X obj 702 -67 s pst-osc-in;
-#X obj 63 -13 r pst-osc-in;
+#X obj 112 -32 r pst-osc-in;
 #X obj 435 -11 s \$0-to-reset;
 #X obj 38 851 hsl 127 10 0 1 0 0 empty \$0-scaled-value0 empty -2 -8
-0 10 -1 -262144 -1 0 1;
+0 10 -1 -262144 -1 106 1;
 #X obj 38 835 hsl 127 14 0 1 0 1 \$0ceilings \$0ceilingr ceiling 3
 5 0 9 -262144 -4033 -133153 5600 1;
 #N canvas 0 0 1350 707 numbercruncher 0;
@@ -102,8 +102,8 @@ PD to crash.;
 #X obj 38 1018 hsl 127 14 0 1 0 1 \$0curves \$0curver sensitivity 3
 5 0 9 -262144 -4033 -133153 9050 1;
 #X symbolatom 54 815 19 0 0 0 ID #0macr #0macs, f 19;
-#X obj 90 74 r \$0macs;
-#X obj 63 99 route;
+#X obj 258 241 r \$0macs;
+#X obj 231 266 route;
 #X obj 38 995 hsl 127 14 0 1 0 1 \$0floors \$0floorr floor 3 5 0 9
 -262144 -4033 -133153 950 1;
 #X obj 910 -47 declare -path subpatches;
@@ -113,11 +113,11 @@ PD to crash.;
 #X obj 38 863 hsl 127 10 0 1 0 0 empty \$0-scaled-value1 empty -2 -8
 0 10 -1 -262144 -1 0 1;
 #X obj 38 875 hsl 127 10 0 1 0 0 empty \$0-scaled-value2 empty -2 -8
-0 10 -1 -262144 -1 0 1;
+0 10 -1 -262144 -1 2 1;
 #X obj 38 887 hsl 127 10 0 1 0 0 empty \$0-scaled-value3 empty -2 -8
-0 10 -1 -262144 -1 0 1;
+0 10 -1 -262144 -1 19 1;
 #X obj 38 899 hsl 127 10 0 1 0 0 empty \$0-scaled-value4 empty -2 -8
-0 10 -1 -262144 -1 0 1;
+0 10 -1 -262144 -1 7 1;
 #X obj 38 911 hsl 127 10 0 1 0 0 empty \$0-scaled-value5 empty -2 -8
 0 10 -1 -262144 -1 0 1;
 #X obj 38 923 hsl 127 10 0 1 0 0 empty \$0-scaled-value6 empty -2 -8
@@ -125,13 +125,13 @@ PD to crash.;
 #X obj 38 935 hsl 127 10 0 1 0 0 empty \$0-scaled-value7 empty -2 -8
 0 10 -1 -262144 -1 0 1;
 #X obj 38 947 hsl 127 10 0 1 0 0 empty \$0-scaled-value8 empty -2 -8
-0 10 -1 -262144 -1 0 1;
+0 10 -1 -262144 -1 17 1;
 #X obj 38 959 hsl 127 10 0 1 0 0 empty \$0-scaled-value9 empty -2 -8
 0 10 -1 -262144 -1 0 1;
 #X obj 38 971 hsl 127 10 0 1 0 0 empty \$0-scaled-value10 empty -2
--8 0 10 -1 -262144 -1 0 1;
+-8 0 10 -1 -262144 -1 10 1;
 #X obj 38 983 hsl 127 10 0 1 0 0 empty \$0-scaled-value11 empty -2
--8 0 10 -1 -262144 -1 0 1;
+-8 0 10 -1 -262144 -1 16 1;
 #X obj 439 869 outlet;
 #X floatatom 452 505 5 0 0 0 - - -, f 5;
 #X obj 487 717 s \$0-scaled-value1;
@@ -225,14 +225,10 @@ PD to crash.;
 #X obj 2125 789 touch-clip \$0;
 #X obj 2347 790 touch-clip \$0;
 #X obj 2544 791 touch-clip \$0;
-#X obj 228 2 oscparse;
-#X obj 228 29 route list;
-#X obj 228 56 route \$1;
-#X obj 228 83 route touches;
 #X obj 228 -29 mrpeach/slipdec 65536;
 #X msg 275 -101 close;
 #X obj 174 816 tgl 15 0 \$0usbs \$0usbr usb 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 221 -163 sel 1 0;
 #X obj 230 -66 comport 1 115200;
 #X floatatom 221 -127 5 0 0 0 - - -, f 5;
@@ -261,9 +257,9 @@ PD to crash.;
 #X connect 6 0 7 0;
 #X restore 169 -230 pd os_check;
 #X text 246 -229 < set default port for current operating system;
-#X obj 201 288 switch;
-#X obj 68 293 + 1;
-#X obj 45 215 r \$0usbs;
+#X obj 195 141 switch;
+#X obj 55 33 + 1;
+#X obj 55 5 r \$0usbs;
 #X obj 222 -190 r \$0usbs;
 #X connect 2 0 15 0;
 #X connect 5 0 6 0;
@@ -273,8 +269,8 @@ PD to crash.;
 #X connect 9 0 8 0;
 #X connect 10 0 11 0;
 #X connect 11 0 32 0;
-#X connect 12 0 159 1;
-#X connect 14 0 10 0;
+#X connect 12 0 53 0;
+#X connect 14 0 155 1;
 #X connect 18 0 26 0;
 #X connect 20 0 23 0;
 #X connect 21 0 24 0;
@@ -394,23 +390,19 @@ PD to crash.;
 #X connect 140 0 91 0;
 #X connect 141 0 84 0;
 #X connect 141 0 93 0;
-#X connect 142 0 143 0;
-#X connect 143 0 144 0;
-#X connect 144 0 145 0;
-#X connect 145 0 159 2;
+#X connect 142 0 155 2;
+#X connect 143 0 146 0;
+#X connect 145 0 147 0;
+#X connect 145 1 143 0;
 #X connect 146 0 142 0;
-#X connect 147 0 150 0;
-#X connect 149 0 151 0;
-#X connect 149 1 147 0;
-#X connect 150 0 146 0;
-#X connect 151 0 153 0;
-#X connect 152 0 155 0;
+#X connect 147 0 149 0;
+#X connect 148 0 151 0;
+#X connect 149 0 146 0;
+#X connect 150 0 151 0;
+#X connect 151 0 147 0;
 #X connect 153 0 150 0;
-#X connect 154 0 155 0;
-#X connect 155 0 151 0;
-#X connect 157 0 154 0;
-#X connect 159 0 53 0;
-#X connect 160 0 159 0;
-#X connect 161 0 160 0;
-#X connect 162 0 149 0;
+#X connect 155 0 10 0;
+#X connect 156 0 155 0;
+#X connect 157 0 156 0;
+#X connect 158 0 145 0;
 #X coords 0 -1 1 1 185 255 2 30 786;
