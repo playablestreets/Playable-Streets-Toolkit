@@ -1,41 +1,42 @@
-#N canvas 20 35 665 668 10;
-#X obj 267 183 pst-qwerty;
-#X obj 60 299 pst-control;
-#X obj 26 409 pst-scale flt 1 flt 8 flt 1;
-#X text 182 298 < pst-control takes variable touch data and sends it
-out as midi control change data, f 31;
-#X text 188 425 < pst-scale takes variable touch data and maps it to
+#N canvas -8 -8 1350 684 10;
+#X declare -path subpatches;
+#X declare -path subpatches;
+#X obj 26 339 pst-scale flt 1 flt 8 flt 1;
+#X text 188 355 < pst-scale takes variable touch data and maps it to
 a musical scale \, outputing midi note pairs, f 27;
-#X text 336 185 < outputs key/value pairs;
-#X obj 81 208 pst-osc signal;
+#X obj 85 189 pst-osc signal;
 #X obj 24 25 pst-touch flt 0.154762 flt 0.349206 sym EC-FA-BC-58-BD-13
 flt 0.809524;
-#X obj 26 530 pst-osc notes;
-#X obj 26 385 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 26 460 pst-osc notes;
+#X obj 26 315 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 413 460 pst-sound sym ./samples flt 0 flt 0;
-#X floatatom 413 348 5 0 0 0 - - -, f 5;
-#X text 418 375 < left inlet triggers sample;
-#X text 383 426 right inlet sets directory >;
-#X obj 413 632 dac~;
-#X obj 413 593 *~ 0.2;
+#X obj 450 462 pst-sound sym ./samples flt 0 flt 0;
+#X floatatom 450 382 5 0 0 0 - - -, f 5;
+#X text 490 381 < left inlet triggers sample;
+#X text 475 423 right inlet sets directory >;
+#X obj 450 634 dac~;
+#X obj 450 595 *~ 0.2;
 #X text 187 34 < pst-reads touch data over wifi. It's argument is the
 MAC address of the target touch sensor.   It outputs a variable value
 between 0 and 1 from its left outlet. A bang in the right inlet triggers
 recalibration., f 36;
-#X text 394 220 < pst-osc-out forwards data from its inlet to the local
+#X text 218 188 < pst-osc-out forwards data from its inlet to the local
 network as OSC on port 9000 using its argument as the OSC address.
 throttle limits messages to an interval of 100ms, f 31;
-#X obj 267 221 pst-osc qwerty;
-#X msg 573 414 ./samples;
-#X connect 0 0 18 0;
-#X connect 2 0 8 0;
-#X connect 7 0 1 0;
-#X connect 7 0 9 0;
+#X msg 658 425 ./samples;
+#X obj 450 18 pst-multitouch flt 0.0436508 flt 0.607143 sym B4-E6-2D-EA-1C-F5
+flt 0.198413;
+#X obj 450 317 pst-trigger 3;
+#X text 535 316 <pst-trigger outputs it's value or zero in response
+to touch input, f 32;
+#X connect 0 0 4 0;
+#X connect 3 0 5 0;
+#X connect 3 0 2 0;
+#X connect 5 0 0 0;
+#X connect 6 0 11 0;
 #X connect 7 0 6 0;
-#X connect 9 0 2 0;
-#X connect 10 0 15 0;
 #X connect 11 0 10 0;
-#X connect 15 0 14 0;
-#X connect 15 0 14 1;
-#X connect 19 0 10 1;
+#X connect 11 0 10 1;
+#X connect 14 0 6 1;
+#X connect 15 0 16 0;
+#X connect 16 0 7 0;
