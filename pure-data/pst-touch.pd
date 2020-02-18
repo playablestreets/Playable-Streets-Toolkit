@@ -1,4 +1,4 @@
-#N canvas 0 0 1334 668 10;
+#N canvas 265 0 804 668 10;
 #X obj 33 308 cnv 15 142 140 empty empty PST-TOUCH 5 5 0 14 -4033 -262144
 0;
 #X obj 266 947 outlet;
@@ -48,7 +48,7 @@
 #X obj 230 541 * -1;
 #X obj 230 568 + 1;
 #X obj 644 -69 loadbang;
-#X msg 404 344 -1026.3;
+#X msg 404 344 -1276.7;
 #X obj 644 -42 delay 500;
 #X obj 231 50 unpack 0 0 0 0 0 0 0 0, f 52;
 #X obj 231 -115 netreceive -u -b;
@@ -65,7 +65,7 @@
 #X obj 598 -1 s \$0-to-reset;
 #X obj 396 575 loadbang;
 #X obj 39 370 hsl 127 19 0 1 0 0 empty \$0-scaled-value empty -2 -8
-0 10 -1 -262144 -1 1024 1;
+0 10 -1 -262144 -1 1046 1;
 #X obj 39 360 hsl 127 14 0 1 0 1 \$0ceilings \$0ceilingr ceiling 3
 5 0 9 -262144 -4033 -133153 10200 1;
 #N canvas 202 177 645 462 numbercruncher 0;
@@ -144,13 +144,12 @@ PD to crash.;
 #X obj 231 -4 route;
 #X obj 396 601 delay 100;
 #X obj 39 385 hsl 127 14 0 1 0 1 \$0floors \$0floorr floor 3 5 0 9
--262144 -4033 -133153 1850 1;
+-262144 -4033 -133153 1950 1;
 #X obj 266 868 maxlib/scale 0 1 0 1;
 #X obj 332 793 r \$0floors;
 #X obj 362 828 r \$0ceilings;
 #X obj 266 899 clip 0 1;
 #X obj 319 946 s \$0-clipped-value;
-#X obj 598 626 limit;
 #X obj 266 923 change;
 #X connect 2 0 25 0;
 #X connect 3 0 39 0;
@@ -209,7 +208,7 @@ PD to crash.;
 #X connect 62 0 65 0;
 #X connect 63 0 62 1;
 #X connect 64 0 62 2;
-#X connect 65 0 68 0;
-#X connect 68 0 66 0;
-#X connect 68 0 1 0;
+#X connect 65 0 67 0;
+#X connect 67 0 66 0;
+#X connect 67 0 1 0;
 #X coords 0 -1 1 1 148 149 2 30 304;

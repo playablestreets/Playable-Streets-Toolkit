@@ -68,6 +68,7 @@ void rootPage() {
 }
 
 void setup() {
+  
   pinMode(13, OUTPUT);
   digitalWrite(13, LOW);
   pinMode(13, INPUT);
@@ -83,20 +84,26 @@ void setup() {
   byte macBytes[6];
   WiFi.macAddress(macBytes);
   char macChars[19];
+  
   sprintf(macChars, "%02X-%02X-%02X-%02X-%02X-%02X", macBytes[0], macBytes[1], macBytes[2], macBytes[3], macBytes[4], macBytes[5]);
   macString = String(macChars);
+  
   Serial.println("hey there.  I am " + macString);
+  
   oscAddress = "/" + macString + "/touches";
+  
   Serial.println("I will output osc to " + oscAddress + " on port 8000 as well as over serial.");
+  
   Server.on("/", rootPage);
+  
   if (Portal.begin()) {
     Serial.println("WiFi connected: " + WiFi.localIP().toString()); //this line was hanging
     Serial.println("Starting UDP");
     Udp.begin(localPort);
     Serial.println("Started!");
   }
-
-    oldMicros = micros(); 
+  
+  oldMicros = micros(); 
 }
 
 void loop() {
@@ -105,6 +112,9 @@ void loop() {
       OSCMessage msg(oscAddress.c_str());
       out1 = time(13);
       filterOneLowpass.input (out1);
+
+      //todo filter out repeat values
+      
       msg.add(out1);// output
       Udp.beginPacket(outIp, outPort);
       msg.send(Udp);
