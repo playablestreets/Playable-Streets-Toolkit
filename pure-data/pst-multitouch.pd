@@ -1,6 +1,6 @@
-#N canvas 334 0 665 668 10;
+#N canvas 309 66 665 631 10;
 #X declare -path subpatches;
-#X obj 18 -2 cnv 15 180 264 empty empty PST-MULTITOUCH 5 5 0 14 -4033
+#X obj 18 -2 cnv 15 180 264 empty empty PST-MULTITOUCH 5 5 0 14 -2689
 -262144 0;
 #X obj 444 861 outlet;
 #X obj 647 -14 inlet;
@@ -19,9 +19,9 @@
 #X obj 324 41 r pst-osc-in;
 #X obj 647 62 s \$0-to-reset;
 #X obj 23 61 hsl 127 10 0 1 0 0 empty \$0-scaled-value0 empty -2 -8
-0 10 -1 -262144 -1 0 1;
+0 10 -1 -262144 -1 1050 1;
 #X obj 23 45 hsl 127 14 0 1 0 1 \$0ceilings \$0ceilingr ceiling 3 5
-0 9 -262144 -4033 -133153 5600 1;
+0 9 -262144 -4033 -133153 3000 1;
 #N canvas 0 0 1350 707 numbercruncher 0;
 #X obj 87 10 inlet;
 #X obj 425 249 loadbang;
@@ -100,38 +100,38 @@ saver;
 object feeds the creation argument straight into another it will cause
 PD to crash.;
 #X obj 23 228 hsl 127 14 0 1 0 1 \$0curves \$0curver sensitivity 3
-5 0 9 -262144 -4033 -133153 9050 1;
+5 0 9 -262144 -4033 -133153 5550 1;
 #X symbolatom 39 25 19 0 0 0 ID #0macr #0macs, f 19;
 #X obj 470 314 r \$0macs;
 #X obj 443 339 route;
 #X obj 23 205 hsl 127 14 0 1 0 1 \$0floors \$0floorr floor 3 5 0 9
--262144 -4033 -133153 950 1;
+-262144 -4033 -133153 1050 1;
 #X obj 1122 26 declare -path subpatches;
 #X floatatom 467 577 5 0 0 0 - - -, f 5;
 #X obj 462 741 s \$0-scaled-value0;
 #X obj 497 832 s \$0-clipped-value0;
 #X obj 23 73 hsl 127 10 0 1 0 0 empty \$0-scaled-value1 empty -2 -8
-0 10 -1 -262144 -1 0 1;
+0 10 -1 -262144 -1 109 1;
 #X obj 23 85 hsl 127 10 0 1 0 0 empty \$0-scaled-value2 empty -2 -8
-0 10 -1 -262144 -1 0 1;
+0 10 -1 -262144 -1 178 1;
 #X obj 23 97 hsl 127 10 0 1 0 0 empty \$0-scaled-value3 empty -2 -8
-0 10 -1 -262144 -1 0 1;
+0 10 -1 -262144 -1 417 1;
 #X obj 23 109 hsl 127 10 0 1 0 0 empty \$0-scaled-value4 empty -2 -8
-0 10 -1 -262144 -1 0 1;
+0 10 -1 -262144 -1 340 1;
 #X obj 23 121 hsl 127 10 0 1 0 0 empty \$0-scaled-value5 empty -2 -8
-0 10 -1 -262144 -1 0 1;
+0 10 -1 -262144 -1 353 1;
 #X obj 23 133 hsl 127 10 0 1 0 0 empty \$0-scaled-value6 empty -2 -8
-0 10 -1 -262144 -1 0 1;
+0 10 -1 -262144 -1 126 1;
 #X obj 23 145 hsl 127 10 0 1 0 0 empty \$0-scaled-value7 empty -2 -8
 0 10 -1 -262144 -1 0 1;
 #X obj 23 157 hsl 127 10 0 1 0 0 empty \$0-scaled-value8 empty -2 -8
-0 10 -1 -262144 -1 0 1;
+0 10 -1 -262144 -1 720 1;
 #X obj 23 169 hsl 127 10 0 1 0 0 empty \$0-scaled-value9 empty -2 -8
-0 10 -1 -262144 -1 0 1;
+0 10 -1 -262144 -1 131 1;
 #X obj 23 181 hsl 127 10 0 1 0 0 empty \$0-scaled-value10 empty -2
--8 0 10 -1 -262144 -1 0 1;
+-8 0 10 -1 -262144 -1 752 1;
 #X obj 23 193 hsl 127 10 0 1 0 0 empty \$0-scaled-value11 empty -2
--8 0 10 -1 -262144 -1 0 1;
+-8 0 10 -1 -262144 -1 552 1;
 #X obj 651 942 outlet;
 #X floatatom 664 578 5 0 0 0 - - -, f 5;
 #X obj 699 790 s \$0-scaled-value1;

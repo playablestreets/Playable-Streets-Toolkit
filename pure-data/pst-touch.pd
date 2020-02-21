@@ -1,6 +1,6 @@
-#N canvas 334 0 665 668 10;
+#N canvas 309 66 665 631 10;
 #X declare -path subpatches;
-#X obj 33 308 cnv 15 142 140 empty empty PST-TOUCH 5 5 0 14 -4033 -262144
+#X obj 33 308 cnv 15 142 140 empty empty PST-TOUCH 5 5 0 14 -2689 -262144
 0;
 #X obj 232 428 outlet;
 #X obj 598 -77 inlet;

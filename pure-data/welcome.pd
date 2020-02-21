@@ -1,4 +1,4 @@
-#N canvas 0 0 1334 668 10;
+#N canvas 0 64 1280 633 10;
 #X declare -path subpatches;
 #X declare -path subpatches;
 #X obj 26 299 pst-scale flt 1 flt 8 flt 1;
@@ -26,7 +26,7 @@ throttle limits messages to an interval of 100ms, f 31;
 #X msg 658 445 ./samples;
 #X obj 456 18 pst-multitouch flt 0.0753968 flt 0.718254 sym B4-E6-2D-EA-1C-F5
 flt 0.444444 flt 0;
-#X text 535 316 <pst-trigger outputs it's value or zero in response
+#X text 537 316 <pst-trigger outputs it's value or zero in response
 to touch input, f 32;
 #X obj 456 317 pst-trigger 2;
 #X connect 0 0 4 0;

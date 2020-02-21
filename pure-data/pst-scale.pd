@@ -1,5 +1,5 @@
-#N canvas 404 0 526 668 10;
-#X obj 79 104 cnv 15 147 106 empty empty PST-SCALE 5 5 0 14 -4033 -262144
+#N canvas 379 66 526 631 10;
+#X obj 79 104 cnv 15 147 106 empty empty PST-SCALE 5 5 0 14 -2689 -262144
 0;
 #X obj -14 50 inlet;
 #X dropdown 82 134 21 0 0 0 - #0scaleguir #0scaleguis, f 21;
@@ -63,7 +63,7 @@
 #X obj 365 154 uzi;
 #X obj 365 119 t b i;
 #X text 109 319 scale as semi-tone steps >;
-#X msg 282 658 0 2 3 5 7 8 10;
+#X msg 282 658;
 #X obj 296 86 t b i b, f 52;
 #N canvas 764 21 511 714 scales 0;
 #X obj 65 27 t b s, f 8;
