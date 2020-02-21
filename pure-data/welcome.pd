@@ -1,4 +1,4 @@
-#N canvas 0 64 1280 633 10;
+#N canvas -2 66 1278 631 10;
 #X declare -path subpatches;
 #X declare -path subpatches;
 #X obj 26 299 pst-scale flt 1 flt 8 flt 1;
@@ -10,33 +10,34 @@ flt 0.809524;
 #X obj 26 420 pst-osc notes;
 #X obj 26 275 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 456 482 pst-sound sym ./samples flt 0 flt 0;
-#X floatatom 456 382 5 0 0 0 - - -, f 5;
-#X text 490 381 < left inlet triggers sample;
-#X text 475 443 right inlet sets directory >;
-#X obj 456 674 dac~;
-#X obj 456 635 *~ 0.2;
-#X text 187 34 < pst-reads touch data over wifi. It's argument is the
-MAC address of the target touch sensor.   It outputs a variable value
-between 0 and 1 from its left outlet. A bang in the right inlet triggers
-recalibration., f 36;
+#X obj 451 395 pst-sound sym ../../samples flt 0 flt 0;
+#X obj 451 587 dac~;
+#X obj 451 548 *~ 0.2;
 #X text 218 188 < pst-osc-out forwards data from its inlet to the local
 network as OSC on port 9000 using its argument as the OSC address.
 throttle limits messages to an interval of 100ms, f 31;
-#X msg 658 445 ./samples;
-#X obj 456 18 pst-multitouch flt 0.0753968 flt 0.718254 sym B4-E6-2D-EA-1C-F5
+#X obj 451 21 pst-multitouch flt 0.0753968 flt 0.718254 sym B4-E6-2D-EA-1C-F5
 flt 0.444444 flt 0;
-#X text 537 316 <pst-trigger outputs it's value or zero in response
-to touch input, f 32;
-#X obj 456 317 pst-trigger 2;
+#X floatatom 516 335 5 0 0 0 - - -, f 5;
+#X text 561 332 < middle inlet sets sample;
+#X obj 479 335 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 549 362 ../../samples;
+#X text 461 311 < left inlet triggers sample;
+#X text 639 361 < right inlet sets directory (relative to toolkit directory)
+, f 18;
+#X text 187 34 < pst-touch reads touch data over wifi. It's argument
+is the MAC address of the target touch sensor.   It outputs a variable
+value between 0 and 1 from its left outlet. A bang in the right inlet
+triggers recalibration., f 36;
 #X connect 0 0 4 0;
 #X connect 3 0 5 0;
 #X connect 3 0 2 0;
 #X connect 5 0 0 0;
-#X connect 6 0 11 0;
-#X connect 7 0 6 0;
-#X connect 11 0 10 0;
-#X connect 11 0 10 1;
-#X connect 14 0 6 1;
-#X connect 15 0 17 0;
-#X connect 17 0 7 0;
+#X connect 6 0 8 0;
+#X connect 8 0 7 0;
+#X connect 8 0 7 1;
+#X connect 10 0 6 0;
+#X connect 11 0 6 1;
+#X connect 13 0 6 0;
+#X connect 14 0 6 2;
