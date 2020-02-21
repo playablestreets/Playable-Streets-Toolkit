@@ -1,4 +1,4 @@
-#N canvas 0 0 1334 668 10;
+#N canvas -7 0 665 675 10;
 #X obj 79 104 cnv 15 147 106 empty empty PST-SOUND 5 5 0 14 -4033 -262144
 0;
 #X obj -159 6 inlet;
@@ -94,7 +94,7 @@ f 20;
 around index;
 #X obj -31 29 inlet;
 #X obj -14 59 s \$0inlet2;
-#X obj -33 90 s \$0directoryr;
+#X obj -105 125 s \$0directoryr;
 #X text -122 0 left inlet selects sample;
 #X text 37 35 right inlet selects directory;
 #X obj 432 747 r \$0-playindex;
@@ -117,7 +117,7 @@ around index;
 #X msg 318 897 symbol stopped;
 #X obj -108 94 tosymbol;
 #X obj 278 137 t b b b s 1 clear, f 50;
-#X obj 234 273 s \$0-to-coll;
+#X obj 264 273 s \$0-to-coll;
 #X obj 579 564 r \$0-to-coll;
 #X obj 575 185 s \$0-to-coll;
 #X obj 420 555 s \$0-to-coll;
@@ -131,6 +131,16 @@ around index;
 #X obj -138 262 + 9;
 #X text -115 255 kludge to make indexing work with test folder, f
 19;
+#X obj 209 139 bng 15 250 50 0 \$0-opendialogs empty empty 17 7 0 10
+-262144 -133153 -133153;
+#X obj -3 607 s \$0-opendialog;
+#X obj 24 541 r \$0-opendialog;
+#X obj 45 573 s \$0directoryr;
+#X obj 72 496 print;
+#X obj 29 434 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 75 437 r \$0-opendialogs;
+#X obj 73 467 folderpanel;
 #X connect 1 0 14 0;
 #X connect 3 0 11 0;
 #X connect 5 0 8 0;
@@ -197,4 +207,7 @@ around index;
 #X connect 73 0 72 0;
 #X connect 75 0 23 0;
 #X connect 76 0 37 0;
+#X connect 84 0 83 0;
+#X connect 84 0 85 0;
+#X connect 85 0 82 0;
 #X coords 0 -1 1 1 152 111 2 77 102;

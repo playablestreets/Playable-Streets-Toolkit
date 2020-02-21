@@ -1,27 +1,27 @@
-#N canvas 0 0 1334 668 10;
+#N canvas 334 0 665 668 10;
 #X declare -path subpatches;
-#X obj 33 788 cnv 15 180 250 empty empty PST-MULTITOUCH 5 5 0 14 -4033
+#X obj 18 -2 cnv 15 180 264 empty empty PST-MULTITOUCH 5 5 0 14 -4033
 -262144 0;
-#X obj 232 788 outlet;
-#X obj 435 -87 inlet;
-#X floatatom 454 1042 10 0 0 0 - #0-clipped-value -, f 10;
-#X obj 196 791 bng 15 250 50 0 \$0-reset \$0-to-reset rst -20 5 0 10
+#X obj 444 861 outlet;
+#X obj 647 -14 inlet;
+#X floatatom 666 1115 10 0 0 0 - #0-clipped-value -, f 10;
+#X obj 181 1 bng 15 250 50 0 \$0-reset \$0-to-reset rst -20 5 0 10
 -262144 -1 -1;
-#X obj 481 -79 loadbang;
-#X obj 481 -52 delay 500;
-#X obj 702 -100 netreceive -u -b;
-#X msg 702 -127 listen 8000;
-#X obj 702 -154 loadbang;
-#X obj 231 182 oscparse;
-#X obj 231 209 route list;
-#X obj 231 293 route touches;
-#X obj 702 -67 s pst-osc-in;
-#X obj 112 -32 r pst-osc-in;
-#X obj 435 -11 s \$0-to-reset;
-#X obj 38 851 hsl 127 10 0 1 0 0 empty \$0-scaled-value0 empty -2 -8
-0 10 -1 -262144 -1 106 1;
-#X obj 38 835 hsl 127 14 0 1 0 1 \$0ceilings \$0ceilingr ceiling 3
-5 0 9 -262144 -4033 -133153 5600 1;
+#X obj 693 -6 loadbang;
+#X obj 693 21 delay 500;
+#X obj 914 -27 netreceive -u -b;
+#X msg 914 -54 listen 8000;
+#X obj 914 -81 loadbang;
+#X obj 443 255 oscparse;
+#X obj 443 282 route list;
+#X obj 443 366 route touches;
+#X obj 914 6 s pst-osc-in;
+#X obj 324 41 r pst-osc-in;
+#X obj 647 62 s \$0-to-reset;
+#X obj 23 61 hsl 127 10 0 1 0 0 empty \$0-scaled-value0 empty -2 -8
+0 10 -1 -262144 -1 0 1;
+#X obj 23 45 hsl 127 14 0 1 0 1 \$0ceilings \$0ceilingr ceiling 3 5
+0 9 -262144 -4033 -133153 5600 1;
 #N canvas 0 0 1350 707 numbercruncher 0;
 #X obj 87 10 inlet;
 #X obj 425 249 loadbang;
@@ -85,158 +85,158 @@ saver;
 #X connect 27 2 13 0;
 #X connect 27 3 17 0;
 #X connect 27 4 26 0;
-#X restore 1004 165 pd numbercruncher;
-#X obj 1004 286 iemguts/canvasargs;
-#X obj 1004 86 iemguts/canvasargs;
-#X obj 911 -4 loadbang;
-#X obj 1004 134 list trim;
-#X obj 1004 111 list;
-#X obj 911 40 t b b, f 16;
-#X msg 911 123 1;
-#X obj 1004 241 spigot;
-#X text 1004 311 v1.3 \, 2015 Liam Goodacre \, liam.goodacre@gmail.com
+#X restore 1216 238 pd numbercruncher;
+#X obj 1216 359 iemguts/canvasargs;
+#X obj 1216 159 iemguts/canvasargs;
+#X obj 1123 69 loadbang;
+#X obj 1216 207 list trim;
+#X obj 1216 184 list;
+#X obj 1123 113 t b b, f 16;
+#X msg 1123 196 1;
+#X obj 1216 314 spigot;
+#X text 1216 384 v1.3 \, 2015 Liam Goodacre \, liam.goodacre@gmail.com
 ;
-#X text 1045 234 This spigot is necessary because if one [canvasargs]
+#X text 1257 307 This spigot is necessary because if one [canvasargs]
 object feeds the creation argument straight into another it will cause
 PD to crash.;
-#X obj 38 1018 hsl 127 14 0 1 0 1 \$0curves \$0curver sensitivity 3
+#X obj 23 228 hsl 127 14 0 1 0 1 \$0curves \$0curver sensitivity 3
 5 0 9 -262144 -4033 -133153 9050 1;
-#X symbolatom 54 815 19 0 0 0 ID #0macr #0macs, f 19;
-#X obj 258 241 r \$0macs;
-#X obj 231 266 route;
-#X obj 38 995 hsl 127 14 0 1 0 1 \$0floors \$0floorr floor 3 5 0 9
+#X symbolatom 39 25 19 0 0 0 ID #0macr #0macs, f 19;
+#X obj 470 314 r \$0macs;
+#X obj 443 339 route;
+#X obj 23 205 hsl 127 14 0 1 0 1 \$0floors \$0floorr floor 3 5 0 9
 -262144 -4033 -133153 950 1;
-#X obj 910 -47 declare -path subpatches;
-#X floatatom 255 504 5 0 0 0 - - -, f 5;
-#X obj 250 668 s \$0-scaled-value0;
-#X obj 285 759 s \$0-clipped-value0;
-#X obj 38 863 hsl 127 10 0 1 0 0 empty \$0-scaled-value1 empty -2 -8
+#X obj 1122 26 declare -path subpatches;
+#X floatatom 467 577 5 0 0 0 - - -, f 5;
+#X obj 462 741 s \$0-scaled-value0;
+#X obj 497 832 s \$0-clipped-value0;
+#X obj 23 73 hsl 127 10 0 1 0 0 empty \$0-scaled-value1 empty -2 -8
 0 10 -1 -262144 -1 0 1;
-#X obj 38 875 hsl 127 10 0 1 0 0 empty \$0-scaled-value2 empty -2 -8
-0 10 -1 -262144 -1 2 1;
-#X obj 38 887 hsl 127 10 0 1 0 0 empty \$0-scaled-value3 empty -2 -8
-0 10 -1 -262144 -1 19 1;
-#X obj 38 899 hsl 127 10 0 1 0 0 empty \$0-scaled-value4 empty -2 -8
-0 10 -1 -262144 -1 7 1;
-#X obj 38 911 hsl 127 10 0 1 0 0 empty \$0-scaled-value5 empty -2 -8
+#X obj 23 85 hsl 127 10 0 1 0 0 empty \$0-scaled-value2 empty -2 -8
 0 10 -1 -262144 -1 0 1;
-#X obj 38 923 hsl 127 10 0 1 0 0 empty \$0-scaled-value6 empty -2 -8
+#X obj 23 97 hsl 127 10 0 1 0 0 empty \$0-scaled-value3 empty -2 -8
 0 10 -1 -262144 -1 0 1;
-#X obj 38 935 hsl 127 10 0 1 0 0 empty \$0-scaled-value7 empty -2 -8
+#X obj 23 109 hsl 127 10 0 1 0 0 empty \$0-scaled-value4 empty -2 -8
 0 10 -1 -262144 -1 0 1;
-#X obj 38 947 hsl 127 10 0 1 0 0 empty \$0-scaled-value8 empty -2 -8
-0 10 -1 -262144 -1 17 1;
-#X obj 38 959 hsl 127 10 0 1 0 0 empty \$0-scaled-value9 empty -2 -8
+#X obj 23 121 hsl 127 10 0 1 0 0 empty \$0-scaled-value5 empty -2 -8
 0 10 -1 -262144 -1 0 1;
-#X obj 38 971 hsl 127 10 0 1 0 0 empty \$0-scaled-value10 empty -2
--8 0 10 -1 -262144 -1 10 1;
-#X obj 38 983 hsl 127 10 0 1 0 0 empty \$0-scaled-value11 empty -2
--8 0 10 -1 -262144 -1 16 1;
-#X obj 439 869 outlet;
-#X floatatom 452 505 5 0 0 0 - - -, f 5;
-#X obj 487 717 s \$0-scaled-value1;
-#X obj 492 840 s \$0-clipped-value1;
-#X obj 231 350 unpack 0 0 0 0 0 0 0 0 0 0 0 0, f 375;
-#X obj 661 870 outlet;
-#X floatatom 674 506 5 0 0 0 - - -, f 5;
-#X obj 858 871 outlet;
-#X floatatom 871 507 5 0 0 0 - - -, f 5;
-#X obj 709 744 s \$0-scaled-value2;
-#X obj 714 841 s \$0-clipped-value2;
-#X obj 899 749 s \$0-scaled-value3;
-#X obj 911 842 s \$0-clipped-value3;
-#X obj 1088 861 outlet;
-#X floatatom 1101 497 5 0 0 0 - - -, f 5;
-#X obj 1285 862 outlet;
-#X floatatom 1298 498 5 0 0 0 - - -, f 5;
-#X obj 1497 863 outlet;
-#X floatatom 1520 499 5 0 0 0 - - -, f 5;
-#X obj 1694 864 outlet;
-#X floatatom 1717 500 5 0 0 0 - - -, f 5;
-#X obj 1120 731 s \$0-scaled-value4;
-#X obj 1141 832 s \$0-clipped-value4;
-#X obj 1332 726 s \$0-scaled-value5;
-#X obj 1338 833 s \$0-clipped-value5;
-#X obj 1545 738 s \$0-scaled-value6;
-#X obj 1550 834 s \$0-clipped-value6;
-#X obj 1746 730 s \$0-scaled-value7;
-#X obj 1747 835 s \$0-clipped-value7;
-#X obj 1928 879 outlet;
-#X floatatom 1951 515 5 0 0 0 - - -, f 5;
-#X obj 2125 880 outlet;
-#X floatatom 2148 516 5 0 0 0 - - -, f 5;
-#X obj 2347 881 outlet;
-#X floatatom 2370 517 5 0 0 0 - - -, f 5;
-#X obj 2544 882 outlet;
-#X floatatom 2567 518 5 0 0 0 - - -, f 5;
-#X obj 1967 751 s \$0-scaled-value8;
-#X obj 1981 850 s \$0-clipped-value8;
-#X obj 2176 755 s \$0-scaled-value9;
-#X obj 2178 851 s \$0-clipped-value9;
-#X obj 2372 714 s \$0-scaled-value10;
-#X obj 2400 852 s \$0-clipped-value10;
-#X obj 2581 752 s \$0-scaled-value11;
-#X obj 2597 853 s \$0-clipped-value11;
-#X obj 232 697 touch-clip \$0;
-#X obj 232 544 touch-scale \$0;
-#X obj 234 583 t 1 f;
-#X obj 223 628 -;
-#X obj 439 643 t 1 f;
-#X obj 428 688 -;
-#X obj 673 661 t 1 f;
-#X obj 662 706 -;
-#X obj 877 672 t 1 f;
-#X obj 866 717 -;
-#X obj 1078 659 t 1 f;
-#X obj 1067 704 -;
-#X obj 1294 640 t 1 f;
-#X obj 1283 685 -;
-#X obj 1509 654 t 1 f;
-#X obj 1498 699 -;
-#X obj 1716 660 t 1 f;
-#X obj 1705 705 -;
-#X obj 1924 668 t 1 f;
-#X obj 1913 713 -;
-#X obj 2133 662 t 1 f;
-#X obj 2122 707 -;
-#X obj 2364 642 t 1 f;
-#X obj 2353 687 -;
-#X obj 2553 678 t 1 f;
-#X obj 2542 723 -;
-#X obj 429 545 touch-scale \$0;
-#X obj 651 546 touch-scale \$0;
-#X obj 848 547 touch-scale \$0;
-#X obj 1078 537 touch-scale \$0;
-#X obj 1275 538 touch-scale \$0;
-#X obj 1497 539 touch-scale \$0;
-#X obj 1694 540 touch-scale \$0;
-#X obj 1928 555 touch-scale \$0;
-#X obj 2125 556 touch-scale \$0;
-#X obj 2347 557 touch-scale \$0;
-#X obj 2544 558 touch-scale \$0;
-#X obj 439 778 touch-clip \$0;
-#X obj 661 779 touch-clip \$0;
-#X obj 858 780 touch-clip \$0;
-#X obj 1088 770 touch-clip \$0;
-#X obj 1285 771 touch-clip \$0;
-#X obj 1497 772 touch-clip \$0;
-#X obj 1694 773 touch-clip \$0;
-#X obj 1928 788 touch-clip \$0;
-#X obj 2125 789 touch-clip \$0;
-#X obj 2347 790 touch-clip \$0;
-#X obj 2544 791 touch-clip \$0;
-#X obj 228 -29 mrpeach/slipdec 65536;
-#X msg 275 -101 close;
-#X obj 174 816 tgl 15 0 \$0usbs \$0usbr usb 17 7 0 10 -262144 -1 -1
-1 1;
-#X obj 221 -163 sel 1 0;
-#X obj 230 -66 comport 1 115200;
-#X floatatom 221 -127 5 0 0 0 - - -, f 5;
-#X obj 130 -196 inlet;
-#X msg 221 -101 open \$1;
-#X floatatom 168 -195 5 0 0 0 - - -, f 5;
-#X obj 130 -165 prepend set;
-#X text 2 -194 set custom comport >;
+#X obj 23 133 hsl 127 10 0 1 0 0 empty \$0-scaled-value6 empty -2 -8
+0 10 -1 -262144 -1 0 1;
+#X obj 23 145 hsl 127 10 0 1 0 0 empty \$0-scaled-value7 empty -2 -8
+0 10 -1 -262144 -1 0 1;
+#X obj 23 157 hsl 127 10 0 1 0 0 empty \$0-scaled-value8 empty -2 -8
+0 10 -1 -262144 -1 0 1;
+#X obj 23 169 hsl 127 10 0 1 0 0 empty \$0-scaled-value9 empty -2 -8
+0 10 -1 -262144 -1 0 1;
+#X obj 23 181 hsl 127 10 0 1 0 0 empty \$0-scaled-value10 empty -2
+-8 0 10 -1 -262144 -1 0 1;
+#X obj 23 193 hsl 127 10 0 1 0 0 empty \$0-scaled-value11 empty -2
+-8 0 10 -1 -262144 -1 0 1;
+#X obj 651 942 outlet;
+#X floatatom 664 578 5 0 0 0 - - -, f 5;
+#X obj 699 790 s \$0-scaled-value1;
+#X obj 704 913 s \$0-clipped-value1;
+#X obj 443 423 unpack 0 0 0 0 0 0 0 0 0 0 0 0, f 375;
+#X obj 873 943 outlet;
+#X floatatom 886 579 5 0 0 0 - - -, f 5;
+#X obj 1070 944 outlet;
+#X floatatom 1083 580 5 0 0 0 - - -, f 5;
+#X obj 921 817 s \$0-scaled-value2;
+#X obj 926 914 s \$0-clipped-value2;
+#X obj 1111 822 s \$0-scaled-value3;
+#X obj 1123 915 s \$0-clipped-value3;
+#X obj 1300 934 outlet;
+#X floatatom 1313 570 5 0 0 0 - - -, f 5;
+#X obj 1497 935 outlet;
+#X floatatom 1510 571 5 0 0 0 - - -, f 5;
+#X obj 1709 936 outlet;
+#X floatatom 1732 572 5 0 0 0 - - -, f 5;
+#X obj 1906 937 outlet;
+#X floatatom 1929 573 5 0 0 0 - - -, f 5;
+#X obj 1332 804 s \$0-scaled-value4;
+#X obj 1353 905 s \$0-clipped-value4;
+#X obj 1544 799 s \$0-scaled-value5;
+#X obj 1550 906 s \$0-clipped-value5;
+#X obj 1757 811 s \$0-scaled-value6;
+#X obj 1762 907 s \$0-clipped-value6;
+#X obj 1958 803 s \$0-scaled-value7;
+#X obj 1959 908 s \$0-clipped-value7;
+#X obj 2140 952 outlet;
+#X floatatom 2163 588 5 0 0 0 - - -, f 5;
+#X obj 2337 953 outlet;
+#X floatatom 2360 589 5 0 0 0 - - -, f 5;
+#X obj 2559 954 outlet;
+#X floatatom 2582 590 5 0 0 0 - - -, f 5;
+#X obj 2756 955 outlet;
+#X floatatom 2779 591 5 0 0 0 - - -, f 5;
+#X obj 2179 824 s \$0-scaled-value8;
+#X obj 2193 923 s \$0-clipped-value8;
+#X obj 2388 828 s \$0-scaled-value9;
+#X obj 2390 924 s \$0-clipped-value9;
+#X obj 2584 787 s \$0-scaled-value10;
+#X obj 2612 925 s \$0-clipped-value10;
+#X obj 2793 825 s \$0-scaled-value11;
+#X obj 2809 926 s \$0-clipped-value11;
+#X obj 444 770 touch-clip \$0;
+#X obj 444 617 touch-scale \$0;
+#X obj 446 656 t 1 f;
+#X obj 435 701 -;
+#X obj 651 716 t 1 f;
+#X obj 640 761 -;
+#X obj 885 734 t 1 f;
+#X obj 874 779 -;
+#X obj 1089 745 t 1 f;
+#X obj 1078 790 -;
+#X obj 1290 732 t 1 f;
+#X obj 1279 777 -;
+#X obj 1506 713 t 1 f;
+#X obj 1495 758 -;
+#X obj 1721 727 t 1 f;
+#X obj 1710 772 -;
+#X obj 1928 733 t 1 f;
+#X obj 1917 778 -;
+#X obj 2136 741 t 1 f;
+#X obj 2125 786 -;
+#X obj 2345 735 t 1 f;
+#X obj 2334 780 -;
+#X obj 2576 715 t 1 f;
+#X obj 2565 760 -;
+#X obj 2765 751 t 1 f;
+#X obj 2754 796 -;
+#X obj 641 618 touch-scale \$0;
+#X obj 863 619 touch-scale \$0;
+#X obj 1060 620 touch-scale \$0;
+#X obj 1290 610 touch-scale \$0;
+#X obj 1487 611 touch-scale \$0;
+#X obj 1709 612 touch-scale \$0;
+#X obj 1906 613 touch-scale \$0;
+#X obj 2140 628 touch-scale \$0;
+#X obj 2337 629 touch-scale \$0;
+#X obj 2559 630 touch-scale \$0;
+#X obj 2756 631 touch-scale \$0;
+#X obj 651 851 touch-clip \$0;
+#X obj 873 852 touch-clip \$0;
+#X obj 1070 853 touch-clip \$0;
+#X obj 1300 843 touch-clip \$0;
+#X obj 1497 844 touch-clip \$0;
+#X obj 1709 845 touch-clip \$0;
+#X obj 1906 846 touch-clip \$0;
+#X obj 2140 861 touch-clip \$0;
+#X obj 2337 862 touch-clip \$0;
+#X obj 2559 863 touch-clip \$0;
+#X obj 2756 864 touch-clip \$0;
+#X obj 440 44 mrpeach/slipdec 65536;
+#X msg 487 -28 close;
+#X obj 159 26 tgl 15 0 \$0usbs \$0usbr usb 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 433 -90 sel 1 0;
+#X obj 442 7 comport 1 115200;
+#X floatatom 433 -54 5 0 0 0 - - -, f 5;
+#X obj 342 -123 inlet;
+#X msg 433 -28 open \$1;
+#X floatatom 380 -122 5 0 0 0 - - -, f 5;
+#X obj 342 -92 prepend set;
+#X text 214 -121 set custom comport >;
 #N canvas 776 188 450 323 os_check 0;
 #X obj 70 54 operating_system;
 #X obj 70 21 loadbang;
@@ -255,12 +255,24 @@ PD to crash.;
 #X connect 4 0 7 0;
 #X connect 5 0 7 0;
 #X connect 6 0 7 0;
-#X restore 169 -230 pd os_check;
-#X text 246 -229 < set default port for current operating system;
-#X obj 195 141 switch;
-#X obj 55 33 + 1;
-#X obj 55 5 r \$0usbs;
-#X obj 222 -190 r \$0usbs;
+#X restore 381 -157 pd os_check;
+#X text 458 -156 < set default port for current operating system;
+#X obj 407 214 switch;
+#X obj 267 106 + 1;
+#X obj 267 78 r \$0usbs;
+#X obj 434 -117 r \$0usbs;
+#X text 15 246 1;
+#X text 30 246 2;
+#X text 46 246 3;
+#X text 62 246 4;
+#X text 78 246 5;
+#X text 94 246 6;
+#X text 110 246 7;
+#X text 126 246 8;
+#X text 143 246 9;
+#X text 156 246 10;
+#X text 172 246 11;
+#X text 188 246 12;
 #X connect 2 0 15 0;
 #X connect 5 0 6 0;
 #X connect 6 0 15 0;
@@ -405,4 +417,4 @@ PD to crash.;
 #X connect 156 0 155 0;
 #X connect 157 0 156 0;
 #X connect 158 0 145 0;
-#X coords 0 -1 1 1 185 255 2 30 786;
+#X coords 0 -1 1 1 186 270 2 15 -5;

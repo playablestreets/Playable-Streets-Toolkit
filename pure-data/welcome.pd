@@ -25,7 +25,7 @@ network as OSC on port 9000 using its argument as the OSC address.
 throttle limits messages to an interval of 100ms, f 31;
 #X msg 658 445 ./samples;
 #X obj 456 18 pst-multitouch flt 0.0753968 flt 0.718254 sym B4-E6-2D-EA-1C-F5
-flt 0.444444;
+flt 0.444444 flt 0;
 #X text 535 316 <pst-trigger outputs it's value or zero in response
 to touch input, f 32;
 #X obj 456 317 pst-trigger 2;
