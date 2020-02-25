@@ -1,6 +1,8 @@
 # Playable Streets Toolkit
 ### A cross-platform framework for expressive, touch-based interaction design.
 
+![Screenshot](../assets/screenshot.png?raw=true)
+
 Included in this framework are:
 - a set sketches for ESP32 and other Arduino type boards for capacitive and resistive touch sensing.
 - a set of Pure Data abstractions for
