@@ -1,17 +1,18 @@
-#N canvas 1 9 895 631 10;
-#X declare -path subpatches;
-#X declare -path subpatches;
+#N canvas 0 8 897 633 10;
 #X obj 26 299 pst-scale flt 1 flt 8 flt 1;
+#A saved 0 0 0;
 #X text 188 315 < pst-scale takes variable touch data and maps it to
 a musical scale \, outputing midi note pairs, f 27;
 #X obj 85 189 pst-osc signal;
 #X obj 24 25 pst-touch flt 0.154762 flt 0.349206 sym EC-FA-BC-58-BD-13
 flt 0.809524;
+#A saved 0 0 0 symbol;
 #X obj 26 420 pst-osc notes;
-#X obj 26 275 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+#X obj 26 275 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
 #X obj 451 395 pst-sound sym ../../samples flt 0 flt 0 flt 0 flt 1
 ;
+#A saved 0 0 0 0 ../../samples;
 #X obj 451 587 dac~;
 #X obj 451 548 *~ 0.2;
 #X text 218 188 < pst-osc-out forwards data from its inlet to the local
@@ -19,10 +20,11 @@ network as OSC on port 9000 using its argument as the OSC address.
 throttle limits messages to an interval of 100ms, f 31;
 #X obj 451 21 pst-multitouch flt 0.0753968 flt 0.718254 sym B4-E6-2D-EA-1C-F5
 flt 0.444444 flt 0;
+#A saved 0 0 0 symbol 0;
 #X floatatom 516 335 5 0 0 0 - - -, f 5;
 #X text 561 332 < middle inlet sets sample;
-#X obj 479 335 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 479 335 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X msg 549 362 ../../samples;
 #X text 461 311 < left inlet triggers sample;
 #X text 639 361 < right inlet sets directory (relative to toolkit directory)
