@@ -1,4 +1,4 @@
-#N canvas -8 -8 1538 787 10;
+#N canvas 0 0 1522 772 10;
 #X obj 79 104 cnv 15 132 122 empty empty PST-SOUND 5 5 0 14 #00a800
 #fcfcfc 0;
 #X text -243 -3 comment;
@@ -144,7 +144,7 @@ around index;
 #X obj 713 341 prepend set;
 #X obj 816 226 r \$0autos;
 #X obj 167 196 tgl 15 0 \$0loops \$0loopr loop 17 7 0 10 #fcfcfc #5c5c5c
-#000000 1 1;
+#000000 0 1;
 #X obj 516 1074 gate;
 #X obj 516 1044 r \$0loops;
 #X obj 1200 680 savestate, f 11;

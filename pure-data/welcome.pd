@@ -1,6 +1,6 @@
-#N canvas 0 8 897 633 10;
+#N canvas 440 73 898 634 10;
 #X obj 26 299 pst-scale flt 1 flt 8 flt 1;
-#A saved 0 0 0;
+#A saved 8 1 1;
 #X text 188 315 < pst-scale takes variable touch data and maps it to
 a musical scale \, outputing midi note pairs, f 27;
 #X obj 85 189 pst-osc signal;
