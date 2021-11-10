@@ -13,6 +13,8 @@ Included in this framework are:
 ## Requirements
 - Purr Data: https://agraef.github.io/purr-data/
 - Arduino: https://www.arduino.cc/en/main/software
+	- - https://arduino-esp8266.readthedocs.io/en/latest/installing.html
+	- - https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html
 
 
 And optionally
