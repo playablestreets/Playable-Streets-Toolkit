@@ -1,0 +1,14 @@
+#N canvas 442 184 450 300 10;
+#X obj 117 144 maxlib/scale 0 1 0 1;
+#X obj 117 175 clip 0 1;
+#X obj 117 199 change;
+#X obj 83 22 inlet;
+#X obj 119 240 outlet;
+#X obj 183 69 r \$1floors;
+#X obj 213 104 r \$1ceilings;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X connect 5 0 0 1;
+#X connect 6 0 0 2;
